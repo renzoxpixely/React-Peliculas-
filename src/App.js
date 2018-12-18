@@ -1,13 +1,42 @@
 import React, { Component } from "react";
-import { Grid } from "react-bootstrap";
+import {
+  Grid,
+  FormGroup,
+  ControlLabel,
+  FormControl,
+  Button
+} from "react-bootstrap";
+import { MensajeSaludo } from "./MensajeSaludo";
+import { FormaSaludo } from "./FormaSaludo";
 
 export class App extends Component {
+  state = {
+    nombre: this.props.nombre
+  };
+
+  alOprimirBoton = e => {
+    const nombre = e.target.nombre.value;
+    e.preventDefault();
+    if (typeof nombre === "string" && nombre.length > 0)
+      this.setState({
+        nombre: nombre
+      });
+    e.target.nombre.value = "";
+  };
+
+  manejarNuevoNombre = nombre => {
+    this.setState({
+      nombre
+    });
+  };
+
   render() {
-    const { nombre, mensaje } = this.props;
+    const { nombre } = this.state;
+    const { mensaje } = this.props;
     return (
       <Grid>
-        <h1>Hola {nombre}!</h1>
-        <p>{mensaje}</p>
+        <MensajeSaludo nombre={nombre} mensaje={mensaje} />
+        <FormaSaludo alObtenerNuevoNombre={this.manejarNuevoNombre} />
       </Grid>
     );
   }
