@@ -5,7 +5,7 @@ export class MensajeSaludo extends Component {
     const { nombre, mensaje } = this.props;
     return (
       <div>
-        <h1>Hola {nombre}</h1>
+        <h1>Hola {nombre}!</h1>
         <p>{mensaje}</p>
       </div>
     );
