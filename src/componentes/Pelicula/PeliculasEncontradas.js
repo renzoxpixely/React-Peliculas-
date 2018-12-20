@@ -1,5 +1,5 @@
 import React from "react";
-import { Media } from "react-bootstrap";
+import { Media, Label, Button } from "react-bootstrap";
 
 const PeliculasEncontradas = props => (
   <div>
@@ -9,8 +9,14 @@ const PeliculasEncontradas = props => (
           <img src={pelicula.artworkUrl100} alt="{pelicula.trackName}" />
         </Media.Left>
         <Media.Body>
-          <Media.Heading>{pelicula.trackName}</Media.Heading>
+          <Media.Heading>
+            {pelicula.trackName}
+            <Label>{pelicula.contentAdvisoryRating}</Label>
+          </Media.Heading>
           <p>{pelicula.longDescription}</p>
+          <Button bsSize="xsmall" href={pelicula.previewUrl}>
+            Ver
+          </Button>
         </Media.Body>
       </Media>
     ))}
