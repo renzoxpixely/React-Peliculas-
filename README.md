@@ -20,10 +20,10 @@ react-bootstrap bootstrap@3
 ```
 
 # Pasos de instalaciòn
-git clone https://github.com/efuentesp/react-boilerplate-simple.git demo-01
-yarn install 
-yarn add react-bootstrap bootstrap@3
-yarn run start 
+git clone https://github.com/efuentesp/react-boilerplate-simple.git demo-01/
+yarn install/ 
+yarn add react-bootstrap bootstrap@3/
+yarn run start/ 
 
 # Link del proyecto desplegado
 
